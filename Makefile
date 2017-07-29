@@ -56,9 +56,13 @@ $(DVCD)/$(DESIGN)_$(LIB_SPEC).vcd $(DREPORTS)/$(DESIGN)/perf_$(LIB_SPEC): \
 	mkdir -p $(DSIM)
 	cd $(DSIM) && ncverilog -sv +ncaccess+r +ncsdf_precision+1ps +nctimescale+10ps/1ps  \
 		+ncoverride_precision +neg_tchk                               \
-		+define+GATE_LEVEL +define+TB_RESULT_PATH=\"$(DREPORTS)/$(DESIGN)\" \
-		+define+LIB_V=\"$(LIB_V)\" +define+LIB_TEMP=\"$(LIB_TEMP)\"       \
+		+define+GATE_LEVEL \
+		+define+TB_RESULT_PATH=\"$(DREPORTS)/$(DESIGN)\" \
+		+define+LIB_V=\"$(LIB_V)\" \
+		+define+LIB_TEMP=\"$(LIB_TEMP)\"       \
 		+define+LIB_SPEC=\"$(LIB_SPEC)\"                              \
+		+define+DESIGN=\"$(DESIGN)\"                              \
+		+define+DVCD=\"$(DVCD)\"                              \
 		-y $(DHDL) +incdir+$(DHDL)                                  \
 		+simvisargs+"-input $(DSIMTCL)/$(DESIGN).svcf"               \
 		$(LIB_ROOT)/jordan.v                                          \
