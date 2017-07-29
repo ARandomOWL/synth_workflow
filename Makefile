@@ -1,35 +1,6 @@
 export ROOT=$(shell pwd)
-export DWORKFLOW=$(ROOT)/workflow
 
-### Directory paths
-# Sources
-export DHDL=$(ROOT)/src/hdl
-export DTB=$(ROOT)/src/tb
-export DSYNTHGENERIC=$(DWORKFLOW)/synth_tcl
-export DSYNTHTCL=$(ROOT)/src/synth_tcl
-DSIMTCL=$(DWORKFLOW)/src/sim_tcl
-# Products
-export DGATELEVEL=$(ROOT)/gate-level
-export DREPORTS=$(ROOT)/reports
-# Intermediates
-export DSDF=$(ROOT)/sdf
-export DVCD=$(ROOT)/vcd
-export DSYNTH=$(ROOT)/dc_syn
-export DPT=$(ROOT)/pt
-export DSIM=$(ROOT)/sim
-
-SYNTHTOOL=dc_shell-xg-t
-
-### Defaults
-export DESIGN=adder_dr
-export LIB_ROOT=~/jordan-cells
-export LIB_V=0p250v
-export LIB_OPT=100N
-export LIB_STACKED=
-export LIB_TEMP=25c
-export LIB_SPEC=$(LIB_OPT)$(LIB_STACKED)_$(LIB_V)_$(LIB_TEMP)
-export NO_EXIT=
-SHOW_GUI=
+include $(ROOT)/config.mk
 
 .PHONY: all				\
 	load-module			\
