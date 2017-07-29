@@ -67,8 +67,7 @@ $(DVCD)/$(DESIGN)_$(LIB_SPEC).vcd $(DREPORTS)/$(DESIGN)/perf_$(LIB_SPEC): \
 		+define+DVCD=\"$(DVCD)\"                              \
 		-y $(DHDL) +incdir+$(DHDL)                                  \
 		+simvisargs+"-input $(DSIMTCL)/$(DESIGN).svcf"               \
-		$(LIB_ROOT)/jordan.v                                          \
-		$(LIB_ROOT)/jordan_D.v                                        \
+		$(LIB_VERILOG)                                        \
 		$(DTB)/$(DESIGN)_tb.sv                                        \
 		$(DGATELEVEL)/$(DESIGN)_$(LIB_NAME).v                                      \
 		$(genfile)							\
