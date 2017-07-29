@@ -1,11 +1,3 @@
-set LIB_ROOT $::env(LIB_ROOT)
-set DESIGN $::env(DESIGN)
-set LIB_V $::env(LIB_V)
-set LIB_OPT $::env(LIB_OPT)
-set LIB_STACKED $::env(LIB_STACKED)
-set LIB_TEMP $::env(LIB_TEMP)
-set LIB_SPEC $::env(LIB_SPEC)
-
 set LIB_DB_STRING $LIB_ROOT/pipistrelle4_INWE${LIB_OPT}_A12TR_r0p1/db/cln65lp_INWERVTAPTT_tt_typical_max_${LIB_V}_${LIB_TEMP}.db
 
 
@@ -27,3 +19,14 @@ lappend PT_LIB $::env(DGATELEVEL)/$DESIGN.v
 set link_library $LIB_DB
 
 set target_library $LIB_DB
+
+#### Restrict cells for stacked-only
+if {${LIB_STACKED} ne ""} {
+	set_dont_use {cln65lp_INWERVTAPTT_tt_typical_max_${LIB_V}_${LIB_TEMP}/*}
+	remove_attribute {\
+		cln65lp_INWERVTAPTT_tt_typical_max_0p250v_25c/AOI22_X1F* \
+		cln65lp_INWERVTAPTT_tt_typical_max_0p250v_25c/OAI22_X1F* \
+		cln65lp_INWERVTAPTT_tt_typical_max_0p250v_25c/TIE* \
+	} dont_use
+}
+

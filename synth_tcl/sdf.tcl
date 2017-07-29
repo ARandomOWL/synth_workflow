@@ -1,9 +1,9 @@
-source $::env(DSYNTHGENERIC)/load_jordan.tcl
+source $::env(DSYNTHGENERIC)/loadlib.tcl
 
 lappend search_path $::env(DGATELEVEL)
 
 set analyze_design {}
-lappend analyze_design ${DESIGN}.v
+lappend analyze_design ${DESIGN}_${LIB_NAME}.v
 analyze -format verilog $analyze_design
 elaborate ${DESIGN}
 
