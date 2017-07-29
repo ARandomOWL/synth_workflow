@@ -23,7 +23,7 @@ sdf-reports:	$(DREPORTS)/$(DESIGN)/qor_$(LIB_SPEC).rpt
 ### OPEN SYNTHESIS TOOL ###
 synth-tool:
 	mkdir -p $(DSYNTH)
-	cd $(DSYNTH) && NO_EXIT=1 $(SYNTHTOOL) -f $(DSYNTHGENERIC)/load_jordan.tcl
+	cd $(DSYNTH) && NO_EXIT=1 $(SYNTHTOOL) -f $(DSYNTHGENERIC)/gate-level.tcl
 
 ### BEHAVIOURAL SIMULATION ###
 sim-behav:
