@@ -1,0 +1,33 @@
+export DWORKFLOW=$(ROOT)/workflow
+
+### DIR PATHS
+# Sources
+export DHDL=$(ROOT)/src/hdl
+export DTB=$(ROOT)/src/tb
+export DSYNTHGENERIC=$(DWORKFLOW)/synth_tcl
+export DSYNTHTCL=$(ROOT)/src/synth_tcl
+DSIMTCL=$(DWORKFLOW)/src/sim_tcl
+
+# Products
+export DGATELEVEL=$(ROOT)/gate-level
+export DREPORTS=$(ROOT)/reports
+
+# Intermediates
+export DSDF=$(ROOT)/sdf
+export DVCD=$(ROOT)/vcd
+export DSYNTH=$(ROOT)/dc_syn
+export DPT=$(ROOT)/pt
+export DSIM=$(ROOT)/sim
+
+### TOOLS
+SYNTHTOOL=dc_shell-xg-t
+
+### DESIGN NAME
+export DESIGN=rw_memory
+
+### LIB SPEC
+export LIB_NAME=jordan
+
+### TOOL OPTIONS
+export NO_EXIT=
+SHOW_GUI=
