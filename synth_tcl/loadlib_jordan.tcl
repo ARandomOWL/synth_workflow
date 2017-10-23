@@ -14,7 +14,7 @@ if {$LIB_STACKED ne ""} {
 }
 
 set PT_LIB $LIB_DB
-lappend PT_LIB $::env(DGATELEVEL)/$DESIGN.v
+lappend PT_LIB $::env(DGATELEVEL)/${DESIGN}_${LIB_NAME}.v
 
 set link_library $LIB_DB
 
