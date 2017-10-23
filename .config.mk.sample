@@ -6,7 +6,7 @@ export DHDL=$(ROOT)/src/hdl
 export DTB=$(ROOT)/src/tb
 export DSYNTHGENERIC=$(DWORKFLOW)/synth_tcl
 export DSYNTHTCL=$(ROOT)/src/synth_tcl
-DSIMTCL=$(DWORKFLOW)/src/sim_tcl
+DSIMTCL=$(ROOT)/src/sim_tcl
 
 # Products
 export DGATELEVEL=$(ROOT)/gate-level
