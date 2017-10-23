@@ -65,6 +65,7 @@ $(DVCD)/$(DESIGN)_$(LIB_SPEC).vcd $(DREPORTS)/$(DESIGN)/perf_$(LIB_SPEC): \
 		+define+LIB_SPEC=\"$(LIB_SPEC)\"                              \
 		+define+DESIGN=\"$(DESIGN)\"                              \
 		+define+DVCD=\"$(DVCD)\"                              \
+		+define+DSDF=\"$(DSDF)\"                              \
 		-y $(DHDL) +incdir+$(DHDL)                                  \
 		+simvisargs+"-input $(DSIMTCL)/$(DESIGN).svcf"               \
 		$(LIB_VERILOG)                                        \
