@@ -23,7 +23,7 @@ synth:		$(DGATELEVEL)/$(DESIGN)_$(LIB_NAME).v
 sdf-reports:	$(DREPORTS)/$(DESIGN)/qor_$(LIB_SPEC).rpt
 
 ### OPEN SYNTHESIS TOOL ###
-synth-tool:
+synth-tool: $(DGATELEVEL)/$(DESIGN)_$(LIB_NAME).v
 	mkdir -p $(DSYNTH)
 	cd $(DSYNTH) && NO_EXIT=1 $(SYNTHTOOL) -f $(DSYNTHGENERIC)/gate-level.tcl
 
