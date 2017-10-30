@@ -22,6 +22,11 @@ sdf:		$(DSDF)/$(DESIGN)_$(LIB_SPEC).sdf
 synth:		$(DGATELEVEL)/$(DESIGN)_$(LIB_NAME).v
 sdf-reports:	$(DREPORTS)/$(DESIGN)/qor_$(LIB_SPEC).rpt
 
+### GENERIC SYNTHESIS ###
+synth-generic: $(DHDL)/$(DESIGN).sv
+	mkdir -p $(DSYNTH)
+	cd $(DSYNTH) && NO_EXIT=1 $(SYNTHTOOL) -f $(DSYNTHGENERIC)/symbol.tcl
+
 ### OPEN SYNTHESIS TOOL ###
 synth-tool: $(DGATELEVEL)/$(DESIGN)_$(LIB_NAME).v
 	mkdir -p $(DSYNTH)
